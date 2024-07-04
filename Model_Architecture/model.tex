@@ -1,0 +1,43 @@
+\begin{table}[!h]
+  \small % Reduce font size
+  \setlength{\tabcolsep}{7pt} % Adjust column spacing
+  \renewcommand{\arraystretch}{1.2} % Adjust row spacing
+  \caption{Architecture Used for CNN}
+  \label{tab:reduced}
+  \begin{tabular}{|c|p{5.5cm}|}
+    \hline
+    \textbf{Output Size} & \textbf{Description} \\
+    \hline
+    (20, 208, 1) & Input shape \\
+    (20, 208, 16) & Conv2D: 16 filters of size (3, 3), stride (1, 1), padding 'same' \\
+    (20, 208, 16) & Batch Normalization \\
+    (20, 208, 16) & Activation: ReLU \\
+    (10, 104, 16) & MaxPool2D: pool size (2, 2), stride (2, 2) \\
+    (10, 104, 16) & Dropout: 25\% \\
+    (10, 104, 32) & Conv2D: 32 filters of size (3, 3), stride (1, 1), padding 'same' \\
+    (10, 104, 32) & Batch Normalization \\
+    (10, 104, 32) & Activation: ReLU \\
+    (5, 52, 32) & MaxPool2D: pool size (2, 2), stride (2, 2) \\
+    (5, 52, 32) & Dropout: 25\% \\
+    (5, 52, 64) & Conv2D: 64 filters of size (3, 3), stride (1, 1), padding 'same' \\
+    (5, 52, 64) & Batch Normalization \\
+    (5, 52, 64) & Activation: ReLU \\
+    (2, 26, 64) & MaxPool2D: pool size (2, 2), stride (2, 2) \\
+    (2, 26, 64) & Dropout: 25\% \\
+    (2, 26, 128) & Conv2D: 128 filters of size (3, 3), stride (1, 1), padding 'same' \\
+    (2, 26, 128) & Batch Normalization \\
+    (2, 26, 128) & Activation: ReLU \\
+    (1, 13, 128) & MaxPool2D: pool size (2, 2), stride (2, 2) \\
+    (1, 13, 128) & Dropout: 25\% \\
+    (1, 13, 256) & Conv2D: 256 filters of size (3, 3), stride (1, 1), padding 'same' \\
+    (1, 13, 256) & Batch Normalization \\
+    (1, 13, 256) & Activation: ReLU \\
+    (1, 13, 256) & Dropout: 25\% \\
+    3328 & Flatten \\
+    128 & Dense: 128 units, Activation: ReLU \\
+    64 & Dense: 64 units, Activation: ReLU \\
+    16 & Dense: 16 units, Activation: ReLU \\
+    1 & Dense: 1 unit, Activation: Sigmoid \\
+    \hline
+  \end{tabular}
+\end{table}
